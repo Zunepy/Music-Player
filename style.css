@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5f7a61;
+    font-family: 'roboto', sans-serif ;
+}
+
+.music-playlist {
+    width: 350px;
+    height: 550px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 40px 25px rgba(19, 3, 3, 0.1);
+    padding: 30px;
+    overflow: hidden;
+    color: #d5eebb;
+}
+
+.music-name,
+.artist-name {
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 20px #000;
+}
+
+.music-name {
+    font-size: 22.5px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.artist-name {
+    font-size: 17.5px;
+}
+
+.paetron {
+    position: relative;
+    display: block;
+    margin: 30px auto;
+    width: 220px;
+    height: 240px;
+    border-radius: 30%;
+    background-image: url(Images/mulaqat.png) ;
+    background-size: cover;
+    box-shadow: 0 0 10px 10px rgba(2, 0, 0, 0.08);
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #7fc8a9;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400px #d5eebb;
+}
+
+.current-time , 
+.song-duration {
+    font-size: 10px;
+}
+
+.song-duration {
+    position: absolute;
+    top: 24px;
+    right: 0;
+}
+
+.controls {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.play-btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #d5eebb;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 90px #000000;
+}
+
+.play-btn span {
+    position: absolute;
+    top: 52%;
+    left: 33%;
+    transform: translateY(-55%);
+    width: 7px;
+    height: 25px;
+    border-radius: 4px;
+    background: #5f7a61;
+    transition: 0.5s; 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.play-btn span:nth-child(2) {
+    left: 55%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause {
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    background: #d5eebb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
